@@ -1,7 +1,9 @@
 #!/bin/bash
 
-git add . 
+CURRENTBRANCH=`git branch --show-current`
+
+git add .
 echo "Describe Changes:"
-read desc
-git commit -m "$desc"
-git push origin master
+read DESC
+git commit -m "$DESC"
+git push -u origin $CURRENTBRANCH
